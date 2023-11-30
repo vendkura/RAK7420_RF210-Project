@@ -12,4 +12,5 @@ Ce module a été créé à des fins éducatives pour soutenir des cours portant
 Il est basé sur un ESP32-C3 en tant que microcontrôleur principal pour le code utilisateur.
 L'ESP32-C3 utilisee peut contrôler un module RAK3172, qui intègre un transcepteur LoRaWAN qui est connecté à un module GNSS ainsi qu'à divers capteurs. Les différentes fonctionnalités peuvent être exploitées en utilisant la COMMANDE-AT.
 ```
-bot.jpg
+Image du Module
+![bot](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/006058ea-5989-4b9c-b93f-03d21f437e98)
