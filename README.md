@@ -67,9 +67,38 @@ This is a dashboard application for visualizing and manipulating IoT data. It in
     
 # Installation Guide
 
-Considering your smart campus project, the installation of RAK7240 and RAF210 will involve:
+The installation of RAK7240 and RAF210 will involve:
+
+Installation Steps
 
     Identifying optimal locations for maximum coverage and data accuracy.
     Mounting the RAK7240 outdoors, ensuring a stable power supply and network connectivity.
     Placing RAF210 sensors in key areas to monitor environmental conditions.
     Ensuring all devices are securely connected and communicating.
+
+
+--------------------------------
+# User Instructions
+
+Navigating the IoT MQTT Panel:
+
+    Login and Dashboard Use: Accessing and understanding the layout and functionalities.
+    Data Interpretation: Reading and understanding sensor data displayed.
+
+Managing and Analyzing Data:
+
+    Customization: Setting up specific views for different environmental parameters.
+    Trend Analysis: Understanding data patterns over time.
+    Data Export: Steps to export data for external use.
+
+Device Control via MQTT Panel:
+
+    Command Sending: Controlling RAK7240 or RAF210 sensors.
+    Alert Settings: Configuring alerts for environmental thresholds.
+
+Arduino for Device Customization:
+
+    Code Modification: Accessing, modifying, and uploading code.
+    Safety Measures: Ensuring safe and effective code changes.
+
+
