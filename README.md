@@ -54,6 +54,7 @@ Explorer MQTT is a tool used for interacting with MQTT brokers. It's essential f
     Support for multiple MQTT connections.
 
   ## Arduino
+  ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/e02e9966-0f7e-45fc-bb61-21d90e9768f6)
 
 Arduino is used to program your IoT devices. For the RAK7240 and RAF210, Arduino can be used to:
 
@@ -63,6 +64,7 @@ Arduino is used to program your IoT devices. For the RAK7240 and RAF210, Arduino
     High accuracy and fast response times.
 
   ## IoT MQTT Panel
+![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/7ed85319-ec05-45e1-9e1f-e472c951b8ab)
 
 This is a dashboard application for visualizing and manipulating IoT data. It integrates with your MQTT broker to:
 
