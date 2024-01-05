@@ -86,5 +86,35 @@ Injection de Code ARDUINO
     Injecter le code dans l'appareil.
     Lancer l'appareil.
     Tester l'appareil et récupérer les données de l'appareil.
+CONFIGURER EXPLORER MQTT
 
-CONFIGURER EXPL
+    Écrire du code pour activer l'appareil RAF.
+    Injecter le code dans l'appareil.
+    Lancer l'appareil.
+    Tester l'appareil et récupérer les données de l'appareil.
+
+---
+
+# Instructions Utilisateur
+
+Naviguer dans le Panneau MQTT IoT :
+
+    Connexion et Utilisation du Tableau de Bord : Accéder et comprendre la disposition et les fonctionnalités.
+    Interprétation des Données : Lire et comprendre les données des capteurs affichées.
+
+Gestion et Analyse des Données :
+
+    Personnalisation : Configurer des vues spécifiques pour différents paramètres environnementaux.
+    Analyse des Tendances : Comprendre les modèles de données au fil du temps.
+    Exportation des Données : Étapes pour exporter les données pour une utilisation externe.
+
+Contrôle des Appareils via le Panneau MQTT :
+
+    Envoi de Commandes : Contrôler les capteurs RAK7240 ou RAF210.
+    Réglages d'Alerte : Configurer des alertes pour les seuils environnementaux.
+
+Arduino pour la Personnalisation de l'Appareil :
+
+    Modification de Code : Accéder, modifier et télécharger le code.
+    Mesures de Sécurité : Assurer des changements de code sûrs et efficaces.
+
