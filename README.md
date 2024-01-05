@@ -85,6 +85,19 @@ Installation Steps
     Placing RAF210 sensors in key areas to monitor environmental conditions.
     Ensuring all devices are securely connected and communicating.
 
+ARDUINO Code injection
+
+    Write code to activate the RAF device
+    Inject Code in the device
+    Launch Device
+    Test the device and fetch data from the device
+
+CONFIGURE EXPLORER MQTT 
+
+    Write code to activate the RAF device
+    Inject Code in the device
+    Launch Device
+    Test the device and fetch data from the device
 
 --------------------------------
 # User Instructions
