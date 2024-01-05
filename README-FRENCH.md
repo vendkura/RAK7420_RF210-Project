@@ -67,6 +67,13 @@ Il s'agit d'une application tableau de bord pour visualiser et manipuler les don
     Fournir une interface conviviale pour l'analyse des données.
     Permettre le contrôle à distance des appareils IoT via des commandes publiées.
 
+
+---
+# Architecture de la solution
+
+![mqtt1](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/00a7eae4-3245-4be3-a6af-e671ab82b48e)
+
+
 ---
 
 # Guide d'Installation
