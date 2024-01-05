@@ -18,6 +18,7 @@ Le projet comportera plusieurs phases clés : la sélection et l'installation de
 
 En mettant en œuvre ce système de suivi intelligent de campus, le projet vise à contribuer de manière significative au bien-être de la communauté du campus, offrant un modèle qui peut être reproduit et adapté dans d'autres institutions éducatives cherchant à exploiter la puissance de l'IoT pour la surveillance environnementale et les initiatives de campus intelligents.
 
+--------------------------------
 # Hardware Specifications: 
   ## RAK7240 
   ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/1c37815c-2adf-4bd7-8187-b8d47baa2f07)
@@ -31,8 +32,7 @@ The RAK7240 is a LoRaWAN gateway, ideal for large-scale IoT deployment. It's a r
     High-capacity, supporting thousands of nodes.
     Built-in Ethernet and optional cellular connectivity.
     Weatherproof casing for outdoor installation.
-
-# Hardware Specifications: 
+ 
   ## RAF210
 ![top](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/5a1726a6-5a07-43d4-9939-83c45a2f9727)
 
@@ -41,7 +41,8 @@ The RAF210 is a high-precision environmental sensor module designed for IoT appl
     Capabilities to measure temperature, humidity, and air quality.
     Compact and energy-efficient design.
     Easy integration with IoT devices like the RAK7240.
-    
+
+--------------------------------
 # Software and Configuration: 
   ## Explorer MQTT
   ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/3cec8ae6-07bf-4c62-b81d-9ddc0f24a172)
@@ -72,6 +73,7 @@ This is a dashboard application for visualizing and manipulating IoT data. It in
     Provide a user-friendly interface for data analysis.
     Allow remote control of IoT devices through published commands.
     
+--------------------------------
 # Installation Guide
 
 The installation of RAK7240 and RAF210 will involve:
