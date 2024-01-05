@@ -19,7 +19,10 @@ Le projet comportera plusieurs phases clés : la sélection et l'installation de
 En mettant en œuvre ce système de suivi intelligent de campus, le projet vise à contribuer de manière significative au bien-être de la communauté du campus, offrant un modèle qui peut être reproduit et adapté dans d'autres institutions éducatives cherchant à exploiter la puissance de l'IoT pour la surveillance environnementale et les initiatives de campus intelligents.
 
 # Hardware Specifications: 
-  ## RAK7240
+  ## RAK7240 
+  ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/1c37815c-2adf-4bd7-8187-b8d47baa2f07)
+
+  
 
 The RAK7240 is a LoRaWAN gateway, ideal for large-scale IoT deployment. It's a robust, easy to install device, capable of handling a wide range of environmental sensors. Key features include:
 
@@ -29,8 +32,9 @@ The RAK7240 is a LoRaWAN gateway, ideal for large-scale IoT deployment. It's a r
     Built-in Ethernet and optional cellular connectivity.
     Weatherproof casing for outdoor installation.
 
-# Hardware Specifications: R
-  ## AF210
+# Hardware Specifications: 
+  ## RAF210
+![top](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/5a1726a6-5a07-43d4-9939-83c45a2f9727)
 
 The RAF210 is a high-precision environmental sensor module designed for IoT applications. Features include:
 
@@ -40,6 +44,7 @@ The RAF210 is a high-precision environmental sensor module designed for IoT appl
     
 # Software and Configuration: 
   ## Explorer MQTT
+  ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/3cec8ae6-07bf-4c62-b81d-9ddc0f24a172)
 
 Explorer MQTT is a tool used for interacting with MQTT brokers. It's essential for testing and debugging your IoT network. Key functionalities include:
 
