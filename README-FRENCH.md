@@ -26,10 +26,10 @@ Le RAK7240 est une passerelle LoRaWAN, idéale pour le déploiement IoT à grand
     Connectivité Ethernet intégrée et connectivité cellulaire en option.
     Boîtier résistant aux intempéries pour installation en extérieur.
  
-  ## RAF210
+  ## RAF3172
 ![top](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/5a1726a6-5a07-43d4-9939-83c45a2f9727)
 
-Le RAF210 est un module capteur environnemental de haute précision conçu pour les applications IoT. Les fonctionnalités comprennent :
+Le RAF3172 est un module capteur environnemental de haute précision conçu pour les applications IoT. Les fonctionnalités comprennent :
 
     Capacité à mesurer la température, l'humidité et la qualité de l'air.
     Conception compacte et économe en énergie.
@@ -51,7 +51,7 @@ Explorer MQTT est un outil utilisé pour interagir avec les courtiers MQTT. Il e
   ## Arduino
   ![image](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/e02e9966-0f7e-45fc-bb61-21d90e9768f6)
 
-Arduino est utilisé pour programmer vos appareils IoT. Pour le RAK7240 et le RAF210, Arduino peut être utilisé pour :
+Arduino est utilisé pour programmer vos appareils IoT. Pour le RAK7240 et le RAF3172, Arduino peut être utilisé pour :
 
     Injecter un code personnalisé dans les appareils pour une fonctionnalité spécifique.
     Mettre en place des protocoles de communication avec les capteurs.
@@ -78,13 +78,13 @@ Il s'agit d'une application tableau de bord pour visualiser et manipuler les don
 
 # Guide d'Installation
 
-L'installation de RAK7240 et RAF210 impliquera :
+L'installation de RAK7240 et RAF3172 impliquera :
 
 Étapes d'Installation
 
     Identification des emplacements optimaux pour une couverture maximale et une précision des données.
     Montage du RAK7240 en extérieur, en assurant une alimentation stable et une connectivité réseau.
-    Placement des capteurs RAF210 dans des zones clés pour surveiller les conditions environnementales.
+    Placement des capteurs RAF3172 dans des zones clés pour surveiller les conditions environnementales.
     Assurer que tous les appareils sont solidement connectés et communiquent.
 
 Injection de Code ARDUINO
@@ -117,7 +117,7 @@ Gestion et Analyse des Données :
 
 Contrôle des Appareils via le Panneau MQTT :
 
-    Envoi de Commandes : Contrôler les capteurs RAK7240 ou RAF210.
+    Envoi de Commandes : Contrôler les capteurs RAK7240 ou RAF3172.
     Réglages d'Alerte : Configurer des alertes pour les seuils environnementaux.
 
 Arduino pour la Personnalisation de l'Appareil :
