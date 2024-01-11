@@ -10,8 +10,6 @@ Le projet comportera plusieurs phases clés : la sélection et l'installation de
 
 En mettant en œuvre ce système de suivi intelligent de campus, le projet vise à contribuer de manière significative au bien-être de la communauté du campus, offrant un modèle qui peut être reproduit et adapté dans d'autres institutions éducatives cherchant à exploiter la puissance de l'IoT pour la surveillance environnementale et les initiatives de campus intelligents.
 
-Sure, I will translate the provided text from English to French. 
-
 ---
 
 # Spécifications Matérielles :
