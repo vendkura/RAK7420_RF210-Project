@@ -1,10 +1,10 @@
-# RF3210 DOCUMENTATION
+# RAF3172 DOCUMENTATION
 
 ```
-Ce tutoriel est dedie a montrer pas a pas comment nous avons configurer et adapter RF210 a notre projet.
+Ce tutoriel est dedie a montrer pas a pas comment nous avons configurer et adapter RAF3172 a notre projet.
 Le tutoriel consistera a :
 - Installer les outils necessaires
-- Configurer le RF210 pour l'utiliser sur ARDUINO IDE 2.2.1 
+- Configurer le RAF3172 pour l'utiliser sur ARDUINO IDE 2.2.1 
 ```
 ## DETAIL DU MODULE RF3210
 ```
