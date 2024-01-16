@@ -1,0 +1,26 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+</head>
+
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
+
+<script>
+    var data = [
+  {
+    domain: { x: [0, 1], y: [0, 1] },
+    value: 6,
+    title: { text: "Temperature" },
+    type: "indicator",
+    mode: "gauge+number",
+    delta: { reference: 400 },
+    gauge: { axis: { range: [-19, 50] } }
+  }
+];
+
+var layout = { width: 600, height: 400 };
+Plotly.newPlot('myDiv', data, layout);
+
+</script>
