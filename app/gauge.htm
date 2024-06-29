@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="leaflet/leaflet.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="css/gauge.css">
+        <script src="leaflet/leaflet.js"></script>
+</head>
+    
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="map" style="width: 100%; height: 500px;"></div>
+            </div>
+            <div class="col-md-4" style="background: whitesmoke; position: relative;">
+                <div class="row">
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fa fa-clock-o" aria-hidden="true"></i> <span id="localTime" class="position-absolute top-0 end-0"></span></h3>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title"><i class="fa fa-tablet" aria-hidden="true"></i></h3>
+                            <p class="card-text"><span id="deviceCount" class="position-absolute top-0 end-0"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="GaugeMeter" id="GaugeMeter_1" 
+				data-color="#2C94E0"
+				data-back="#FF9EE0" 
+				data-percent="77" 
+				data-append="%"
+				data-text=null
+				data-text_size=0.22
+				>
+				GAUGE
+				</div>
+                <nav>
+                    <div class="col-row">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <label for="devices">Select device</label>
+                                        <select id="devices" name="devices" class="custom-select" onChange="selectChange()">
+                                            <option value="0" selected>----------</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 d-flex justify-content-end align-items-end">
+                                        <input type="button" value="Search" class="btn btn-primary mr-2" onClick="getGPSandDrawPolyline()" />
+                                        <input type="button" value="Clear" class="btn btn-secondary" onClick="clearMap()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="p-4 pt-5"> -->
+                        <table class="table table-responsive">
+                            <tr>
+                                <td width="100%">
+                                    
+                                    <table class="table">
+                                        <tr >
+                                            <td width="200px" ><span class="style3">device</span></td>
+                                            <td width="100px" ><span class="style3">auto update</span></td>
+                                            <td><span class="style3"></span></td>
+                                        </tr>
+                                        <tr >
+                                            <td >
+                                                <div id="dev"><span class="style3"></span></div>
+                                            </td>
+                                            <td >
+                                                <div class="style3" id="auto">TRUE</div>
+                                            </td>
+                                            <td><span class="style3"></span></td>
+                                            
+                                        </tr>
+                                    </table>
+                                    
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </nav>
+            </div>
+            </div>
+<div class="GaugeMeter" id="GaugeMeter_1"></div>
+
+<div class="GaugeMeter" id="GaugeMeter_1" 
+data-color="#2C94E0"
+data-back="#FF9EE0" 
+data-percent="77" 
+data-append="%"
+data-text=null
+data-text_size=0.22
+>
+</div>
+
+<div class="GaugeMeter" id="GaugeMeter_1"
+    data-percent="10"
+    data-min="0"
+    data-used="256"
+    data-total="1024"
+    data-size="200"
+    data-prepend="%"
+    data-append=".00"
+    data-theme="Red-Gold-Green"
+    data-color="Blue"
+    data-back="Silver"
+    data-width="2"
+    data-style="Semi"
+    data-stripe="2"
+    data-animationstep = 1
+    data-animate_gauge_colors=true
+    data-animate_text_colors=true
+    data-label="VISA Card"
+    data-label_color="#FF0000"
+    data-text="Spendings"
+    data-text_size="0.22"
+    data-fill="#FFFFFF"
+    data-showvalue=false
+></div>
+<script
+Xsrc="jquery-3.7.1.min.js"
+src="http://code.jquery.com/jquery-3.7.1.min.js"
+></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="./js/GaugeMeter.js"></script>
+<script>
+  $(document).ready(function(){
+    $(".GaugeMeter").gaugeMeter();
+  });
+
+  var updateInterval = 1000;
+var updateIntervalMap = 300000;
+
+const ckd = [10.288455, 105.755692];
+const titops = [10.008158, 105.777671];
+
+const vn = [16.362702, 106.270887];
+const map = L.map('map').setView(vn, 5);
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	maxZoom: 19,
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var popup = L.popup();
+map.on('click', onMapClick);
+
+var polyline;
+
+// center of map
+var marker = L.marker(ckd).addTo(map);
+marker.bindPopup("<b>CKD's here!</b>.").openPopup();
+marker.on('click', onMarkerClick);
+
+function onMapClick(e) {
+	popup
+		.setLatLng(e.latlng)
+		.setContent("<div align='center'>You clicked the map at<br>" + e.latlng.toString() + "</div>")
+		.openOn(map);
+}
+
+function mapDrawPolyline() {
+	// create a red polyline from an array of LatLng points
+	var latlngs = [
+		[10.285826, 105.745310],
+		[10.288203, 105.748820],
+		[10.289929, 105.751297],
+		[10.289858, 105.751956],
+		[10.287611, 105.753009],
+		[10.288140, 105.754307],
+		[10.288493, 105.755418],
+		[10.288504, 105.755674],
+		[10.288559, 105.756331],
+		[10.288550, 105.757710],
+		[10.290307, 105.757849]
+	];
+
+	polyline = L.polyline(latlngs, {
+		color: 'red',
+		"weight": 5,
+		"opacity": 0.5
+	}).addTo(map);
+	// zoom the map to the polyline
+	map.fitBounds(polyline.getBounds());
+}
+
+
+function clearMap() {
+	polyline.remove();
+	map.setView(ckd, 13);
+}
+
+function onMarkerClick(e) {
+	map.setView(e.latlng, 15);
+}
+
+////////////////////////////////////////////////
+function getMapData() {
+	// time is minutes...
+	var uID = 1;
+	var device = "sensor1";
+	var post = "getdev=1";
+	$.ajax({
+		url: "http://mkgreen.org/iot/rf210/rf210GetPost.php",
+		type: "POST",
+		data: post,
+		cache: false,
+		success: function(html) {
+			//$("#my_time").html(html);
+			parseJson(html);
+			chart.render();
+		}
+	});
+	/////////////
+	setTimeout(btnOkFunction, 1000);
+}
+////////////////////////////////////////////////
+var deviceID = "";
+var autoUpdate = true;
+
+function getGPSandDrawPolyline() {
+	// create a red polyline from an array of LatLng points
+	var latlngs = [];
+	if (deviceID != 0) {
+		var post = "gps=1&devid=" + deviceID;
+		$.ajax({
+			url: "rf210GetPost.php",
+			type: "POST",
+			data: post,
+			cache: false,
+			dataType: "json",
+			success: function(data) {
+				$.each(data, function(key, value) {
+					// Add a marker at each coordinate
+					var marker = L.marker(value).addTo(map);
+					marker.bindPopup("<b>Device location here!</b>").openPopup();
+					marker.on('click', onMarkerClick);
+
+					latlngs.push(value);
+				});
+
+				if (latlngs.length > 0) {
+					polyline = L.polyline(latlngs, {
+						color: "red",
+						weight: 5,
+						opacity: 0.5
+					}).addTo(map);
+					map.fitBounds(polyline.getBounds());
+				}
+			},
+			error: function(xhr, status, error) {
+				console.error('Error loading data: ' + error);
+			}
+		});
+
+	}
+}
+
+function fetchTemperature() {
+    if (deviceID != 0) {
+        $.ajax({
+            url: "rf210-TempHumidity.php",
+            type: "POST",
+            data: { devid: deviceID },
+            dataType: "json",
+            success: function(data) {
+                // Update the temperature and humidity gauges with the received data
+                tempGauge.setValue(data.temperature);
+                tempGauge.draw();
+                humGauge.setValue(data.humidity);
+                humGauge.draw();
+                console.log(data)
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching temperature: ' + error);
+                console.log('Server response:', xhr.responseText); // Log the raw server response
+            }
+        });
+    }
+}
+
+function getDevID() {
+	var post = "getdev=1";
+	$.ajax({
+		url: "rf210_map/html_php/rf210GetPost.php",
+		type: "POST",
+		data: post,
+		cache: false,
+		dataType: 'json',
+		success: function(data) {
+			//$("#data").html(data);
+			var selectBox = $('#devices');
+			$.each(data, function(key, value) {
+				selectBox.append('<option value="' + value + '">' + value + '</option>');
+			});
+		},
+		error: function(xhr, status, error) {
+			console.error('Cannot get devices ID: ' + error);
+		}
+	});
+}
+
+function selectChange() {
+	deviceID = $("#devices").val();
+	$("#dev").html(deviceID);
+	fetchTemperature(); // Fetch the temperature when a device is selected
+}
+
+function checkboxChange() {
+	autoUpdate = document.getElementById("checkbox").checked;
+	if (autoUpdate) {
+        $("#auto").html("TRUE");
+        fetchTemperature(); // Fetch the temperature when the checkbox is checked
+    } else {
+        $("#auto").html("FALSE");
+    }
+}
+
+function getLocalTime() {
+	var d = new Date();
+	var options = { weekday: 'long', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+	var localTime = d.toLocaleString(undefined, options);
+	$("#localTime").html(localTime);
+}
+
+/** Start window onload **/
+window.onload = function() {
+	getLocalTime();
+	getDevID();
+}
+setInterval(function() {
+	doInterval()
+}, updateInterval);
+setInterval(function() {
+	doIntervalUpdateMap()
+}, updateIntervalMap);
+var doInterval = function() {
+	getLocalTime();
+};
+var doIntervalUpdateMap = function() {
+	if (autoUpdate) {
+		getGPSandDrawPolyline();
+	}
+} 
+</script>
+</body>
+</html>

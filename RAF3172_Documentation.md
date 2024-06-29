@@ -1,12 +1,12 @@
-# RF210 DOCUMENTATION
+# RAF3172 DOCUMENTATION
 
 ```
-Ce tutoriel est dedie a montrer pas a pas comment nous avons configurer et adapter RF210 a notre projet.
+Ce tutoriel est dedie a montrer pas a pas comment nous avons configurer et adapter RAF3172 a notre projet.
 Le tutoriel consistera a :
 - Installer les outils necessaires
-- Configurer le RF210 pour l'utiliser sur ARDUINO IDE 2.2.1 
+- Configurer le RAF3172 pour l'utiliser sur ARDUINO IDE 2.2.1 
 ```
-## DETAIL DU MODULE RF210
+## DETAIL DU MODULE RF3210
 ```
 Ce module a été créé à des fins éducatives pour soutenir des cours portant sur les logiciels embarqués, l'électronique numérique et analogique, les télécommunications, le traitement des signaux et l'Internet des objets (IoT).
 Il est basé sur un ESP32-C3 en tant que microcontrôleur principal pour le code utilisateur.
@@ -28,9 +28,9 @@ Presentation du Module
 ![usb](https://github.com/vendkura/RAK7420_RF210-Project/assets/51537350/a75778fd-561c-4d5a-a28c-8d982e68024f)
 
 
-## SPECIFICITES DU MODULE RF210
+## SPECIFICITES DU MODULE RF3210
 
-RF210 firmware ATC version 0.1.2
+RF3210 firmware ATC version 0.1.2
 
 Capteurs supporter:
 
