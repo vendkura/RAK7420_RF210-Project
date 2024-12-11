@@ -1,5 +1,3 @@
-Certainly! Highlighting the problems and solutions in your smart campus tracking project will be crucial, especially for presenting it effectively at a hackathon to a jury of specialists. Here’s how you can articulate these aspects in your presentation:
-
 ### Problems Highlighted
 
 #### 1. Inefficient Environmental Monitoring
